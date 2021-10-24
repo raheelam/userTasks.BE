@@ -133,7 +133,7 @@ exports.deleteTask = (req, res, next) => {
       return Task.findByIdAndRemove(taskId);
     })
     .then((result) => {
-      return User.findById(req.userId);
+      return User.findById(req.params.userId);
     })
     .then((user) => {
       user.tasks.pull(taskId);

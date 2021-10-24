@@ -30,6 +30,6 @@ router.put(
   taskController.updateTask
 );
 
-router.delete("/task/:taskId", taskController.deleteTask);
+router.delete("/task/:taskId/:userId", taskController.deleteTask);
 
 module.exports = router;
