@@ -4,9 +4,9 @@ const User = require("../models/user");
 
 exports.getUsers = (req, res, next) => {
   const currentPage = req.query.page || 1;
-  const perPage = 10;
+  const perPage = parseInt(req.query.perPage) || 5;
   let totalItems;
-
+  console.log(currentPage, perPage);
   User.find()
     .countDocuments()
     .then((count) => {
